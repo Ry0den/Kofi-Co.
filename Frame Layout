@@ -1,21 +1,10 @@
-package Kofi_Co;
-
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-
-public class Frame extends JFrame {
-	
-	Frame(){
+JFrame Kofi = new JFrame();
 		
-		JFrame Kofi = new JFrame();
+Kofi.setTitle("Kofi Co.");
+Kofi.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+Kofi.setResizable(false);
+Kofi.setSize(700,775);
+Kofi.setVisible(true);
 		
-		Kofi.setTitle("Kofi Co.");
-		Kofi.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		Kofi.setResizable(false);
-		Kofi.setSize(700,775);
-		Kofi.setVisible(true);
-		
-		ImageIcon icon = new ImageIcon("Kofi Co.png");
-		Kofi.setIconImage(icon.getImage()); 
-	}
-}
+ImageIcon icon = new ImageIcon("Kofi Co.png");
+Kofi.setIconImage(icon.getImage());
