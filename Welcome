@@ -19,8 +19,9 @@ public class Welcome extends JFrame {
 	JLabel Welcome2 = new JLabel();
 	JLabel Welcome3 = new JLabel();
 	JButton Home = new JButton();
-	CardLayout Transission = new CardLayout();
+	CardLayout Transition = new CardLayout();
 	ImportedFonts ImpFonts = new ImportedFonts();
+	Menu menu = new Menu();
 
 	Welcome() {
 		KofiFrame();
@@ -83,12 +84,12 @@ public class Welcome extends JFrame {
 		Home.setForeground(new Color(0x000000));
 		Contains.add(Home);
 		
-		TrsPanel.setLayout(Transission);	
+		TrsPanel.setLayout(Transition);	
 		TrsPanel.add(Contains, "Home");
 		Kofi.add(TrsPanel);
 
 		Home.addActionListener((e) -> {
-			Transission.show(TrsPanel, "Menu");
+			Transition.show(TrsPanel, "menu.Menucomps()");
 		});
 	}
 
