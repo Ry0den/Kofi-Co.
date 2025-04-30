@@ -1,4 +1,4 @@
-package testswing;
+package Kofi_Co;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,13 +11,44 @@ public class Menu {
 	JPanel BottomHeader = new JPanel();
 	JPanel MenuPanel = new JPanel();
 	JButton[] CoffeeTypesB = new JButton[5];
-	JButton[] CoffeeSelectionB = new JButton[5];
+	JButton[] CoffeeSelectionPopular = new JButton[3];
+	JButton[] CoffeeSelectionCoffee = new JButton[3];
+	JButton[] CoffeeSelectionFrappucinos = new JButton[3];
+	JButton[] CoffeeSelectionHotNonCoffee = new JButton[3];
+	JButton[] CoffeeSelectionColdNonCoffee = new JButton[3];
 	JLabel Logo = new JLabel();
 	JLabel BestSeller = new JLabel();
 	ImportedFonts IMPFonts = new ImportedFonts();
 
+	// CoffeeTypesB
+	JButton bestseller = new JButton("Best Seller");
+	JButton coffee = new JButton("coffee");
+	JButton frappucinos = new JButton("Frappucinos");
+	JButton hotnoncof = new JButton("Hot Non-Coffee");
+	JButton coldnoncof = new JButton("Cold Non-Coffee");
+
+	// Coffee
+	JButton americano = new JButton("Americano");
+	JButton cappucino = new JButton("Cappucino");
+	JButton espresso = new JButton("Espresso");
+
+	// frappucinos
+	JButton saltedcaramelfrappucino = new JButton("<html><center>Salted Caramel<br>Frappucino<html>");
+	JButton matchafrappucino = new JButton("Matcha Frappucino");
+	JButton darkmochachipfrappe = new JButton("<html><center>Dark Mocha<br>Frappucino<html>");
+
+	// hotnoncof
+	JButton hotchocolate = new JButton("Hot Chocolate");
+	JButton pistachiolatte = new JButton("Pistachio Latte");
+	JButton hotchaitea = new JButton("Hot Chai Tea");
+
+	// coldnoncof
+	JButton saltedcaramelmacha = new JButton("Salted Caramel Macha");
+	JButton greentea = new JButton("Green Tea");
+	JButton machalatte = new JButton("Macha Latte");
+
+	//convert to cardlayout
 	JFrame Kofi = new JFrame();
-	
 
 	Menu() {
 		KofiFrame();
@@ -26,7 +57,7 @@ public class Menu {
 
 	public void KofiFrame() {
 
-		Kofi.setTitle("Kofi Co.");
+		Kofi.setTitle("Kofi Co. | Menu");
 		Kofi.getContentPane().setBackground(new Color(0xFFFFFF));
 		Kofi.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Kofi.setResizable(false);
@@ -38,29 +69,29 @@ public class Menu {
 	}
 
 	public void MenuComps() {
-		
+
 		IMPFonts.Fonts();
 
 		CoffeeTypes.setBackground(new Color(0xFBFBFB));
 		CoffeeTypes.setBounds(0, 0, 200, 775);
 		CoffeeTypes.setLayout(null);
-		
+
 		DrinkSelection.setBackground(Color.WHITE);
 		DrinkSelection.setBounds(0, 0, 800, 640);
-		
+
 		BottomHeader.setBackground(new Color(0xFBFBFB));
 		BottomHeader.setBounds(0, 640, 800, 200);
-		
+
 		Logo.setText("K. Co");
 		Logo.setForeground(new Color(0x5e3219));
 		Logo.setFont(new Font("Gugi", Font.PLAIN, 55));
 		Logo.setBounds(35, 30, 140, 50);
 		CoffeeTypes.add(Logo);
-		
+
 		Kofi.add(CoffeeTypes);
 		Kofi.add(DrinkSelection);
 		Kofi.add(BottomHeader);
-		
+
 	}
 
 	public static void main(String[] args) {
