@@ -1,0 +1,70 @@
+package testswing;
+
+import javax.swing.*;
+import java.awt.*;
+import Kofi_Co_Fundamentals.ImportedFonts;
+
+public class Menu {
+	ImageIcon KofiIcon = new ImageIcon("Kofi.png");
+	JPanel CoffeeTypes = new JPanel();
+	JPanel DrinkSelection = new JPanel();
+	JPanel BottomHeader = new JPanel();
+	JPanel MenuPanel = new JPanel();
+	JButton[] CoffeeTypesB = new JButton[5];
+	JButton[] CoffeeSelectionB = new JButton[5];
+	JLabel Logo = new JLabel();
+	JLabel BestSeller = new JLabel();
+	ImportedFonts IMPFonts = new ImportedFonts();
+
+	JFrame Kofi = new JFrame();
+	
+
+	Menu() {
+		KofiFrame();
+		MenuComps();
+	}
+
+	public void KofiFrame() {
+
+		Kofi.setTitle("Kofi Co.");
+		Kofi.getContentPane().setBackground(new Color(0xFFFFFF));
+		Kofi.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Kofi.setResizable(false);
+		Kofi.setSize(700, 775);
+		Kofi.setLocationRelativeTo(null);
+		Kofi.setVisible(true);
+		Kofi.setLayout(null);
+		Kofi.setIconImage(KofiIcon.getImage());
+	}
+
+	public void MenuComps() {
+		
+		IMPFonts.Fonts();
+
+		CoffeeTypes.setBackground(new Color(0xFBFBFB));
+		CoffeeTypes.setBounds(0, 0, 200, 775);
+		CoffeeTypes.setLayout(null);
+		
+		DrinkSelection.setBackground(Color.WHITE);
+		DrinkSelection.setBounds(0, 0, 800, 640);
+		
+		BottomHeader.setBackground(new Color(0xFBFBFB));
+		BottomHeader.setBounds(0, 640, 800, 200);
+		
+		Logo.setText("K. Co");
+		Logo.setForeground(new Color(0x5e3219));
+		Logo.setFont(new Font("Gugi", Font.PLAIN, 55));
+		Logo.setBounds(35, 30, 140, 50);
+		CoffeeTypes.add(Logo);
+		
+		Kofi.add(CoffeeTypes);
+		Kofi.add(DrinkSelection);
+		Kofi.add(BottomHeader);
+		
+	}
+
+	public static void main(String[] args) {
+		new Menu();
+
+	}
+}
