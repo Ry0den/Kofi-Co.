@@ -2,7 +2,6 @@ package Kofi_Co;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.geom.RoundRectangle2D;
 
 import Kofi_Co_Fundamentals.ImportedFonts;
 
