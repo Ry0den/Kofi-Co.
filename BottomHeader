@@ -1,0 +1,38 @@
+public void BottomHeader() {
+
+		JLabel total = new JLabel();
+		JLabel cost = new JLabel();
+		JButton vieworder = new JButton();
+		JButton buynow = new JButton();
+
+		BottomHeaderPanel.setBackground(new Color(0xFBFBFB));
+		BottomHeaderPanel.setBounds(0, 640, 700, 200);
+		BottomHeaderPanel.setLayout(null);
+
+		total.setText("Total");
+		total.setFont(new Font("Poppins", Font.BOLD, 15));
+		total.setBounds(342, 24, 100, 30);
+		BottomHeaderPanel.add(total);
+
+		cost.setText("P00.00");
+		cost.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 22));
+		cost.setBounds(320, 45, 100, 30);
+		BottomHeaderPanel.add(cost);
+
+		vieworder.setBorderPainted(false);
+		vieworder.setBackground(new Color(0x5e3219));
+		vieworder.setText("<html><center>View<br>Order<html>");
+		vieworder.setForeground(Color.WHITE);
+		vieworder.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 15));
+		vieworder.setBounds(415, 23, 85, 55);
+		BottomHeaderPanel.add(vieworder);
+
+		buynow.setBorderPainted(false);
+		buynow.setBackground(new Color(0x5e3219));
+		buynow.setText("Buy Now");
+		buynow.setForeground(Color.WHITE);
+		buynow.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 15));
+		buynow.setBounds(512, 23, 140, 55);
+		BottomHeaderPanel.add(buynow);
+
+	}
