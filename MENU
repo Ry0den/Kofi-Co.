@@ -2,7 +2,6 @@ package Kofi_Co;
 
 import javax.swing.*;
 import java.awt.*;
-
 import Kofi_Co_Fundamentals.ImportedFonts;
 
 public class Menu {
@@ -29,17 +28,12 @@ public class Menu {
 
 	ImportedFonts IMPFonts = new ImportedFonts();
 
-	Menu() {
-		IMPFonts.Fonts();
-		CardLayout();
-	}
-
 	private JButton CoffeeTypesListComps() {
 		JButton btn2 = new JButton();
 		btn2.setOpaque(false);
 		btn2.setContentAreaFilled(false);
 		btn2.setBorderPainted(false);
-		btn2.setFont(new Font("Poppins", Font.BOLD, 17));
+		btn2.setFont(new Font("Poppins SemiBold", Font.BOLD, 17));
 		btn2.setVerticalTextPosition(JLabel.BOTTOM);
 		btn2.setHorizontalTextPosition(JLabel.CENTER);
 		btn2.setIconTextGap(-12);
@@ -58,7 +52,7 @@ public class Menu {
 		btn.setOpaque(false);
 		btn.setContentAreaFilled(false);
 		btn.setBorderPainted(false);
-		btn.setFont(new Font("Poppins", Font.BOLD, 12));
+		btn.setFont(new Font("Poppins Regular", Font.PLAIN, 15));
 		btn.setVerticalTextPosition(JLabel.BOTTOM);
 		btn.setHorizontalTextPosition(JLabel.CENTER);
 		btn.setIconTextGap(-12);
@@ -116,17 +110,17 @@ public class Menu {
 		JButton cappucino = DrinkSelectionComps("Cappucino");
 
 		coffeelabel.setText("Coffee");
-		coffeelabel.setFont(new Font("Poppins", Font.BOLD, 40));
-		coffeelabel.setBounds(25, 125, 130, 80);
+		coffeelabel.setFont(new Font("Poppins Bold", Font.PLAIN, 40));
+		coffeelabel.setBounds(25, 125, 160, 80);
 		MainDrinkSelectionCoffee.add(coffeelabel);
 
-		americano.setBounds(45, 200, 100, 120);
+		americano.setBounds(35, 200, 120, 120);
 		MainDrinkSelectionCoffee.add(americano);
 
-		cappucino.setBounds(190, 200, 100, 120);
+		cappucino.setBounds(180, 200, 120, 120);
 		MainDrinkSelectionCoffee.add(cappucino);
 
-		espresso.setBounds(335, 200, 100, 120);
+		espresso.setBounds(325, 200, 120, 120);
 		MainDrinkSelectionCoffee.add(espresso);
 
 	}
@@ -139,17 +133,17 @@ public class Menu {
 		JButton darkmochachipfrappe = DrinkSelectionComps("<html><center>Dark Mocha<br>Chip<html>");
 
 		frappucinolabel.setText("Frappucinos");
-		frappucinolabel.setFont(new Font("Poppins", Font.BOLD, 40));
-		frappucinolabel.setBounds(25, 125, 240, 80);
+		frappucinolabel.setFont(new Font("Poppins Bold", Font.PLAIN, 40));
+		frappucinolabel.setBounds(25, 125, 280, 80);
 		MainDrinkSelectionFrappucino.add(frappucinolabel);
 
-		saltedcaramelfrappucino.setBounds(45, 200, 100, 136);
+		saltedcaramelfrappucino.setBounds(35, 200, 120, 136);
 		MainDrinkSelectionFrappucino.add(saltedcaramelfrappucino);
 
-		matchafrappucino.setBounds(190, 200, 100, 120);
+		matchafrappucino.setBounds(180, 200, 120, 120);
 		MainDrinkSelectionFrappucino.add(matchafrappucino);
 
-		darkmochachipfrappe.setBounds(334, 200, 102, 136);
+		darkmochachipfrappe.setBounds(325, 200, 125, 136);
 		MainDrinkSelectionFrappucino.add(darkmochachipfrappe);
 
 	}
@@ -162,17 +156,17 @@ public class Menu {
 		JButton londonfog = DrinkSelectionComps("London Fog");
 
 		hotnoncoffeelabel.setText("Hot Non - Coffee");
-		hotnoncoffeelabel.setFont(new Font("Poppins", Font.BOLD, 40));
+		hotnoncoffeelabel.setFont(new Font("Poppins Bold", Font.PLAIN, 40));
 		hotnoncoffeelabel.setBounds(25, 125, 400, 80);
 		MainDrinkSelectionHotNonCoffee.add(hotnoncoffeelabel);
 
-		hotchocolate.setBounds(45, 200, 100, 136);
+		hotchocolate.setBounds(35, 200, 120, 136);
 		MainDrinkSelectionHotNonCoffee.add(hotchocolate);
 
-		chaitea.setBounds(190, 200, 100, 120);
+		chaitea.setBounds(180, 200, 120, 120);
 		MainDrinkSelectionHotNonCoffee.add(chaitea);
 
-		londonfog.setBounds(335, 200, 100, 120);
+		londonfog.setBounds(325, 200, 122, 120);
 		MainDrinkSelectionHotNonCoffee.add(londonfog);
 
 	}
@@ -180,22 +174,22 @@ public class Menu {
 	public void Cold_Non_Coffee() {
 
 		JLabel coldnoncoffeelabel = new JLabel();
-		JButton saltedcaramelmacha = DrinkSelectionComps("<html><center>Caramel<br>Macha<html>");
+		JButton saltedcaramelmacha = DrinkSelectionComps("<html><center>Caramel<br>Matcha<html>");
 		JButton greentea = DrinkSelectionComps("Green Tea");
 		JButton machalatte = DrinkSelectionComps("Macha Latte");
 
 		coldnoncoffeelabel.setText("Cold Non - Coffee");
-		coldnoncoffeelabel.setFont(new Font("Poppins", Font.BOLD, 40));
+		coldnoncoffeelabel.setFont(new Font("Poppins Bold", Font.PLAIN, 40));
 		coldnoncoffeelabel.setBounds(25, 125, 400, 80);
 		MainDrinkSelectionColdNonCoffee.add(coldnoncoffeelabel);
 
-		saltedcaramelmacha.setBounds(45, 200, 100, 136);
+		saltedcaramelmacha.setBounds(35, 200, 120, 136);
 		MainDrinkSelectionColdNonCoffee.add(saltedcaramelmacha);
 
-		greentea.setBounds(190, 200, 100, 120);
+		greentea.setBounds(180, 200, 120, 120);
 		MainDrinkSelectionColdNonCoffee.add(greentea);
 
-		machalatte.setBounds(333, 200, 104, 120);
+		machalatte.setBounds(325, 200, 125, 120);
 		MainDrinkSelectionColdNonCoffee.add(machalatte);
 
 	}
@@ -229,7 +223,7 @@ public class Menu {
 		BottomHeaderPanel.setLayout(null);
 
 		total.setText("Total");
-		total.setFont(new Font("Poppins", Font.BOLD, 15));
+		total.setFont(new Font("Poppins SemiBold", Font.BOLD, 15));
 		total.setBounds(342, 24, 100, 30);
 		BottomHeaderPanel.add(total);
 
@@ -257,14 +251,6 @@ public class Menu {
 	}
 
 	public void CardLayout() {
-		ImageIcon KofiIcon = new ImageIcon("Kofi.png");
-		JFrame Kofi = new JFrame();
-		Kofi.setTitle("Kofi Co. | Menu");
-		Kofi.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		Kofi.setResizable(false);
-		Kofi.setSize(700, 775);
-		Kofi.setLocationRelativeTo(null);
-		Kofi.setIconImage(KofiIcon.getImage());
 
 		CoffeeTypesList();
 		Coffee();
@@ -276,13 +262,13 @@ public class Menu {
 		MainPanel.setLayout(null);
 		MainPanel.setBounds(0, 0, 700, 775);
 
-		JScrollPane scrollmenupanel = new JScrollPane(MenuCategoryPanel);
-		scrollmenupanel.setBounds(0, 0, 200, 775);
-		scrollmenupanel.setBorder(null);
-		scrollmenupanel.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-		scrollmenupanel.getVerticalScrollBar().setPreferredSize(new Dimension(0, 0));
-		scrollmenupanel.getVerticalScrollBar().setUnitIncrement(10);
-		MainPanel.add(scrollmenupanel);
+		JScrollPane scrollmenu = new JScrollPane(MenuCategoryPanel);
+		scrollmenu.setBounds(0, 0, 200, 775);
+		scrollmenu.setBorder(null);
+		scrollmenu.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		scrollmenu.getVerticalScrollBar().setPreferredSize(new Dimension(0, 0));
+		scrollmenu.getVerticalScrollBar().setUnitIncrement(10);
+		MainPanel.add(scrollmenu);
 
 		drinkselectiontrspanel.setLayout(categoryselectioncard);
 		drinkselectiontrspanel.setBounds(200, 0, 500, 640);
@@ -295,11 +281,7 @@ public class Menu {
 		drinkselectiontrspanel.add(MainDrinkSelectionColdNonCoffee, "Cold Non - Coffee");
 
 		MainPanel.add(drinkselectiontrspanel);
-
-		BottomHeaderPanel.setBounds(0, 640, 700, 200);
 		MainPanel.add(BottomHeaderPanel);
-
-		Kofi.add(MainPanel);
 
 		CoffeeSelectionPopular.addActionListener(e -> categoryselectioncard.show(drinkselectiontrspanel, "Popular"));
 		CoffeeSelectionCoffee.addActionListener(e -> categoryselectioncard.show(drinkselectiontrspanel, "Coffee"));
@@ -307,12 +289,9 @@ public class Menu {
 		CoffeeSelectionHotNonCoffee.addActionListener(e -> categoryselectioncard.show(drinkselectiontrspanel, "Hot Non - Coffee"));
 		CoffeeSelectionColdNonCoffee.addActionListener(e -> categoryselectioncard.show(drinkselectiontrspanel, "Cold Non - Coffee"));
 
-		Kofi.setVisible(true);
 	}
-
-	public static void main(String[] args) {
-
-		new Menu();
-
+	
+	public JPanel getMenuPanel() {
+	    return MainPanel;
 	}
 }
