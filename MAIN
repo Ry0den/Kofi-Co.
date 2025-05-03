@@ -1,0 +1,39 @@
+package Kofi_Co;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class Main {
+
+	public static void main(String[] args) {
+		SwingUtilities.invokeLater(() -> {
+			
+			ImageIcon KofiIcon = new ImageIcon("Kofi.png");
+			JFrame Kofi = new JFrame("Kofi Co.");
+			Kofi.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			Kofi.setSize(700, 775);
+			Kofi.setLocationRelativeTo(null);
+			Kofi.setResizable(false);
+			Kofi.setIconImage(KofiIcon.getImage());
+
+			CardLayout cardLayout = new CardLayout();
+			JPanel cardPanel = new JPanel(cardLayout);
+
+			Welcome welcome = new Welcome();
+			Menu menu = new Menu();
+
+			welcome.HomeComp();
+			menu.CardLayout();
+
+			cardPanel.add(welcome.getwelcomepanel(), "Welcome");
+			cardPanel.add(menu.getMenuPanel(), "Menu");
+
+			welcome.gethomenutton().addActionListener(e -> {
+				cardLayout.show(cardPanel, "Menu");
+			});
+
+			Kofi.add(cardPanel);
+			Kofi.setVisible(true);
+		});
+	}
+}
