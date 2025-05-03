@@ -3,11 +3,9 @@ package Kofi_Co;
 import javax.swing.*;
 import java.awt.*;
 import Kofi_Co_Fundamentals.ImportedFonts;
-import Kofi_Co_Fundamentals.MainFrame;
 
 public class Welcome {
-
-	MainFrame Kofi = new MainFrame();
+	
 	JPanel Contains = new JPanel();
 	JPanel TrsPanel = new JPanel();
 	JLabel Logo = new JLabel();
@@ -18,10 +16,6 @@ public class Welcome {
 	JButton Home = new JButton();
 	CardLayout TransitionCard = new CardLayout();
 	ImportedFonts ImpFonts = new ImportedFonts();
-	
-	public Welcome() {
-	    HomeComp();
-	}
 
 	public void HomeComp() {
 
@@ -67,18 +61,13 @@ public class Welcome {
 		Home.setForeground(new Color(0x000000));
 		Contains.add(Home);
 
-		TrsPanel.setLayout(TransitionCard);
-		TrsPanel.add(Contains, "Menu");
-		
-		Kofi.add(TrsPanel);
-
-		Home.addActionListener((e) -> {
-			TransitionCard.show(TrsPanel, "Menu");
-		});
+	}
+	
+	public JPanel getwelcomepanel() {
+	    return Contains;
 	}
 
-	public static void main(String[] args) {
-
-		new Welcome();
+	public JButton gethomenutton() {
+	    return Home;
 	}
 }
