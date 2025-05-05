@@ -3,13 +3,16 @@ package Kofi_Co;
 import javax.swing.*;
 import java.awt.*;
 import Kofi_Co_Fundamentals.ImportedFonts;
+import Kofi_Co_Fundamentals.RoundedButton;
 
 public class Menu {
 
 	ImageIcon Cup = new ImageIcon("Large Cup.png");
 
 	CardLayout categoryselectioncard = new CardLayout();
+	CardLayout cardLayout = new CardLayout();
 
+	JPanel cardPanel = new JPanel(cardLayout);
 	JPanel MainPanel = new JPanel();
 	JPanel MenuCategoryPanel = new JPanel();
 	JPanel drinkselectiontrspanel = new JPanel();
@@ -33,6 +36,7 @@ public class Menu {
 		btn2.setOpaque(false);
 		btn2.setContentAreaFilled(false);
 		btn2.setBorderPainted(false);
+		btn2.setFocusable(false);
 		btn2.setFont(new Font("Poppins SemiBold", Font.BOLD, 17));
 		btn2.setVerticalTextPosition(JLabel.BOTTOM);
 		btn2.setHorizontalTextPosition(JLabel.CENTER);
@@ -52,6 +56,7 @@ public class Menu {
 		btn.setOpaque(false);
 		btn.setContentAreaFilled(false);
 		btn.setBorderPainted(false);
+		btn.setFocusable(false);
 		btn.setFont(new Font("Poppins Regular", Font.PLAIN, 15));
 		btn.setVerticalTextPosition(JLabel.BOTTOM);
 		btn.setHorizontalTextPosition(JLabel.CENTER);
@@ -196,27 +201,10 @@ public class Menu {
 
 	public void BottomHeader() {
 
-		class roundedbutton extends JButton {
-			public roundedbutton() {
-				setFocusPainted(false);
-				setContentAreaFilled(false);
-			}
-
-			@Override
-			protected void paintComponent(Graphics g) {
-				Graphics2D g2 = (Graphics2D) g.create();
-				g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-				g2.setColor(getBackground());
-				g2.fillRoundRect(0, 0, getWidth(), getHeight(), 30, 30);
-				super.paintComponent(g);
-				g2.dispose();
-			}
-		}
-
 		JLabel total = new JLabel();
 		JLabel cost = new JLabel();
-		JButton vieworder = new roundedbutton();
-		JButton buynow = new roundedbutton();
+		JButton vieworder = new RoundedButton();
+		JButton buynow = new RoundedButton();
 
 		BottomHeaderPanel.setBackground(new Color(0xFBFBFB));
 		BottomHeaderPanel.setBounds(0, 640, 700, 200);
@@ -247,6 +235,9 @@ public class Menu {
 		buynow.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 15));
 		buynow.setBounds(512, 23, 140, 55);
 		BottomHeaderPanel.add(buynow);
+
+		vieworder.addActionListener(e -> cardLayout.show(cardPanel, "End"));
+		buynow.addActionListener(e -> cardLayout.show(cardPanel, "Payment Options"));
 
 	}
 
@@ -288,10 +279,17 @@ public class Menu {
 		CoffeeSelectionFrappucinos.addActionListener(e -> categoryselectioncard.show(drinkselectiontrspanel, "Frappucinos"));
 		CoffeeSelectionHotNonCoffee.addActionListener(e -> categoryselectioncard.show(drinkselectiontrspanel, "Hot Non - Coffee"));
 		CoffeeSelectionColdNonCoffee.addActionListener(e -> categoryselectioncard.show(drinkselectiontrspanel, "Cold Non - Coffee"));
+		
+		cardPanel.add(MainPanel, "Menu");
 
 	}
 	
 	public JPanel getMenuPanel() {
 	    return MainPanel;
+	}
+	
+	public void setCardLayout(CardLayout layout, JPanel panel) {
+		this.cardLayout = layout;
+		this.cardPanel = panel;
 	}
 }
