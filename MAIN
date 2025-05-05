@@ -7,7 +7,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(() -> {
-			
+
 			ImageIcon KofiIcon = new ImageIcon("Kofi.png");
 			JFrame Kofi = new JFrame("Kofi Co.");
 			Kofi.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -21,14 +21,29 @@ public class Main {
 
 			Welcome welcome = new Welcome();
 			Menu menu = new Menu();
+			//View_Order vieworder = new View_Order();
+			//Discounts discounts = new Discounts();
+			Payment_Options paymentoptions = new Payment_Options();
+			//Credit credit = new Credit();
+			//Total total = new Total();
+			//Receipt receipt = new Receipt();
+			End end = new End();
 
 			welcome.HomeComp();
 			menu.CardLayout();
+			paymentoptions.paymentcomps();
+			end.EndComps();
 
-			cardPanel.add(welcome.getwelcomepanel(), "Welcome");
+			menu.setCardLayout(cardLayout, cardPanel);
+			paymentoptions.setCardLayout(cardLayout, cardPanel);
+			end.setCardLayout(cardLayout, cardPanel);
+
+			cardPanel.add(welcome.getWelcomePanel(), "Welcome");
 			cardPanel.add(menu.getMenuPanel(), "Menu");
+			cardPanel.add(paymentoptions.getPaymentPanel(), "Payment Options");
+			cardPanel.add(end.getEndPanel(), "End");
 
-			welcome.gethomenutton().addActionListener(e -> {
+			welcome.getHomeButton().addActionListener(e -> {
 				cardLayout.show(cardPanel, "Menu");
 			});
 
