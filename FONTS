@@ -8,27 +8,25 @@ import java.io.IOException;
 
 public class ImportedFonts {
 
-	Font Baloo, Gugi, Poppins, Roboto;
+	Font Baloo, Gugi, Advent;
 
 	public void Fonts() {
 
 		try {
+
+			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+
 			Font newfont1 = Font.createFont(Font.TRUETYPE_FONT, new File("Baloo-Regular.ttf"));
 			Baloo = newfont1.deriveFont(30f);
-			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
 			ge.registerFont(newfont1);
 
 			Font newfont2 = Font.createFont(Font.TRUETYPE_FONT, new File("Gugi-Regular.ttf"));
 			Gugi = newfont2.deriveFont(30f);
 			ge.registerFont(newfont2);
-
-			Font newfont3 = Font.createFont(Font.TRUETYPE_FONT, new File("Gugi-Regular.ttf"));
-			Poppins = newfont3.deriveFont(30f);
+			
+			Font newfont3 = Font.createFont(Font.TRUETYPE_FONT, new File("AdventPro-VariableFont_wdth,wght.ttf"));
+			Gugi = newfont3.deriveFont(30f);
 			ge.registerFont(newfont3);
-
-			Font newfont4 = Font.createFont(Font.TRUETYPE_FONT, new File("Gugi-Regular.ttf"));
-			Roboto = newfont4.deriveFont(30f);
-			ge.registerFont(newfont4);
 
 		} catch (IOException | FontFormatException e) {
 			e.printStackTrace();
