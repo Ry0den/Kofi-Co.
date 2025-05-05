@@ -7,14 +7,12 @@ import Kofi_Co_Fundamentals.ImportedFonts;
 public class Welcome {
 	
 	JPanel Contains = new JPanel();
-	JPanel TrsPanel = new JPanel();
 	JLabel Logo = new JLabel();
 	JLabel Welcome = new JLabel();
 	JLabel Line = new JLabel();
 	JLabel Welcome2 = new JLabel();
 	JLabel Welcome3 = new JLabel();
 	JButton Home = new JButton();
-	CardLayout TransitionCard = new CardLayout();
 	ImportedFonts ImpFonts = new ImportedFonts();
 
 	public void HomeComp() {
@@ -63,11 +61,11 @@ public class Welcome {
 
 	}
 	
-	public JPanel getwelcomepanel() {
+	public JPanel getWelcomePanel() {
 	    return Contains;
 	}
 
-	public JButton gethomenutton() {
+	public JButton getHomeButton() {
 	    return Home;
 	}
 }
