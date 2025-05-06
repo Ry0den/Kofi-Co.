@@ -2,70 +2,62 @@ package Kofi_Co;
 
 import javax.swing.*;
 import java.awt.*;
-import Kofi_Co_Fundamentals.ImportedFonts;
 
-public class Welcome {
-	
-	JPanel Contains = new JPanel();
-	JLabel Logo = new JLabel();
-	JLabel Welcome = new JLabel();
-	JLabel Line = new JLabel();
-	JLabel Welcome2 = new JLabel();
-	JLabel Welcome3 = new JLabel();
-	JButton Home = new JButton();
-	ImportedFonts ImpFonts = new ImportedFonts();
+public class Main {
 
-	public void HomeComp() {
+	public static void main(String[] args) {
+		SwingUtilities.invokeLater(() -> {
 
-		ImpFonts.Fonts();
+			ImageIcon KofiIcon = new ImageIcon("Kofi.png");
+			JFrame Kofi = new JFrame("Kofi Co.");
+			Kofi.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			Kofi.setSize(700, 775);
+			Kofi.setLocationRelativeTo(null);
+			Kofi.setResizable(false);
+			Kofi.setIconImage(KofiIcon.getImage());
 
-		Contains.setBackground(Color.WHITE);
-		Contains.setLayout(null);
+			CardLayout cardLayout = new CardLayout();
+			JPanel cardPanel = new JPanel(cardLayout);
 
-		Logo.setText("K. Co");
-		Logo.setForeground(new Color(0x5e3219));
-		Logo.setFont(new Font("Gugi", Font.BOLD, 140));
-		Logo.setBounds(155, 120, 400, 170);
-		Contains.add(Logo);
+			Welcome welcome = new Welcome();
+			Menu menu = new Menu();
+			//View_Order vieworder = new View_Order();
+			//Discounts discounts = new Discounts();
+			Payment_Options paymentoptions = new Payment_Options();
+			//Credit credit = new Credit();
+			Total total = new Total();
+			Receipt receipt = new Receipt();
+			End end = new End();
 
-		Welcome.setText("Welcome!");
-		Welcome.setForeground(Color.BLACK);
-		Welcome.setFont(new Font("Baloo", Font.BOLD, 70));
-		Welcome.setBounds(175, 320, 400, 100);
-		Contains.add(Welcome);
+			welcome.HomeComp();
+			menu.CardLayout();
+			//vieworder.
+			//discounts.
+			paymentoptions.paymentcomps();
+			//credit.
+			total.Totals();
+			receipt.Receipts();
+			end.EndComps();
 
-		Line.setText("♦──────────────────♦");
-		Line.setForeground(Color.BLACK);
-		Line.setFont(new Font("Arial", Font.PLAIN, 40));
-		Line.setBounds(70, 353, 600, 100);
-		Contains.add(Line);
+			menu.setCardLayout(cardLayout, cardPanel);
+			paymentoptions.setCardLayout(cardLayout, cardPanel);
+			total.setCardLayout(cardLayout, cardPanel);
+			receipt.setCardLayout(cardLayout, cardPanel);
+			end.setCardLayout(cardLayout, cardPanel);
 
-		Welcome2.setText("What would you");
-		Welcome2.setForeground(Color.BLACK);
-		Welcome2.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 35));
-		Welcome2.setBounds(208, 395, 350, 80);
-		Contains.add(Welcome2);
+			cardPanel.add(welcome.getWelcomePanel(), "Welcome");
+			cardPanel.add(menu.getMenuPanel(), "Menu");
+			cardPanel.add(paymentoptions.getPaymentPanel(), "Payment Options");
+			cardPanel.add(total.getKofi1Panel(), "Total");
+			cardPanel.add(receipt.getKofi1ReceiptPanel(), "Receipt");
+			cardPanel.add(end.getEndPanel(), "End");
 
-		Welcome3.setText("like today?");
-		Welcome3.setForeground(Color.BLACK);
-		Welcome3.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 35));
-		Welcome3.setBounds(253, 430, 250, 80);
-		Contains.add(Welcome3);
+			welcome.getHomeButton().addActionListener(e -> {
+				cardLayout.show(cardPanel, "Menu");
+			});
 
-		Home.setOpaque(false);
-		Home.setContentAreaFilled(false);
-		Home.setBorderPainted(false);
-		Home.setBounds(0, 0, 700, 775);
-		Home.setForeground(new Color(0x000000));
-		Contains.add(Home);
-
-	}
-	
-	public JPanel getWelcomePanel() {
-	    return Contains;
-	}
-
-	public JButton getHomeButton() {
-	    return Home;
+			Kofi.add(cardPanel);
+			Kofi.setVisible(true);
+		});
 	}
 }
