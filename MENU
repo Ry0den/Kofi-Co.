@@ -236,7 +236,7 @@ public class Menu {
 		buynow.setBounds(512, 23, 140, 55);
 		BottomHeaderPanel.add(buynow);
 
-		vieworder.addActionListener(e -> cardLayout.show(cardPanel, "End"));
+		vieworder.addActionListener(e -> cardLayout.show(cardPanel, "ViewOrder"));
 		buynow.addActionListener(e -> cardLayout.show(cardPanel, "Payment Options"));
 
 	}
