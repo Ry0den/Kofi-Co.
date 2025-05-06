@@ -21,7 +21,7 @@ public class Main {
 
 			Welcome welcome = new Welcome();
 			Menu menu = new Menu();
-			//View_Order vieworder = new View_Order();
+			View_Order vieworder = new View_Order();
 			//Discounts discounts = new Discounts();
 			Payment_Options paymentoptions = new Payment_Options();
 			//Credit credit = new Credit();
@@ -31,7 +31,7 @@ public class Main {
 
 			welcome.HomeComp();
 			menu.CardLayout();
-			//vieworder.
+			vieworder.CardLayout();
 			//discounts.
 			paymentoptions.paymentcomps();
 			//credit.
@@ -41,12 +41,14 @@ public class Main {
 
 			menu.setCardLayout(cardLayout, cardPanel);
 			paymentoptions.setCardLayout(cardLayout, cardPanel);
+			vieworder.setCardLayout(cardLayout, cardPanel);
 			total.setCardLayout(cardLayout, cardPanel);
 			receipt.setCardLayout(cardLayout, cardPanel);
 			end.setCardLayout(cardLayout, cardPanel);
 
 			cardPanel.add(welcome.getWelcomePanel(), "Welcome");
 			cardPanel.add(menu.getMenuPanel(), "Menu");
+			cardPanel.add(vieworder.getViewOrderPanel(), "ViewOrder");
 			cardPanel.add(paymentoptions.getPaymentPanel(), "Payment Options");
 			cardPanel.add(total.getKofi1Panel(), "Total");
 			cardPanel.add(receipt.getKofi1ReceiptPanel(), "Receipt");
