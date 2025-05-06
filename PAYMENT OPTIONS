@@ -1,0 +1,85 @@
+package Kofi_Co;
+
+import javax.swing.*;
+import java.awt.*;
+import Kofi_Co_Fundamentals.ImportedFonts;
+import Kofi_Co_Fundamentals.Topheader;
+import Kofi_Co_Fundamentals.RoundedButton;
+
+public class Payment_Options {
+
+	ImportedFonts IMPfonts = new ImportedFonts();
+	Topheader topheader = new Topheader();
+
+	CardLayout cardLayout = new CardLayout();
+
+	JPanel cardPanel = new JPanel(cardLayout);
+	JPanel panel = new JPanel();
+
+	JButton cashButton = button();
+	JButton cashlessButton = button();
+	
+	private JButton button() {
+		JButton btn2 = new RoundedButton();
+		btn2.setFont(new Font("Poppins Regular", Font.PLAIN, 30));
+		btn2.setBackground(new Color(0x5e3219));
+		btn2.setForeground(Color.WHITE);
+		btn2.setFocusPainted(false);
+		btn2.setBorderPainted(false);
+		return btn2;
+	}
+
+	public void paymentcomps() {
+
+		IMPfonts.Fonts();
+		topheader.Topheadercomps();
+
+		panel.setLayout(null);
+		panel.setBackground(Color.WHITE);
+
+		JLabel title = new JLabel("K. Co", SwingConstants.CENTER);
+		title.setFont(new Font("Gugi", Font.BOLD, 140));
+		title.setForeground(new Color(0x5e3219));
+		title.setBounds(154, 120, 375, 170);
+		panel.add(title);
+
+		JLabel subtitle = new JLabel("Payment Options", SwingConstants.CENTER);
+		subtitle.setFont(new Font("Poppins Regular", Font.PLAIN, 40));
+		subtitle.setBounds(125, 300, 431, 49);
+		panel.add(subtitle);
+
+		Color brown = new Color(0x5e3219);
+
+		cashButton.setText("Cash");
+		cashButton.setBounds(145, 365, 180, 170);
+		panel.add(cashButton);
+
+		cashlessButton.setText("Cashless");
+		cashlessButton.setBounds(350, 365, 180, 170);
+		panel.add(cashlessButton);
+
+		panel.add(topheader);
+
+		cashlessButton.addActionListener(e -> cardLayout.show(cardPanel, "Credit"));
+		cashButton.addActionListener(e -> cardLayout.show(cardPanel, "Total"));
+
+		//Topheader.addActionListener(e -> cardLayout.show(cardPanel, "menu"));
+	}
+
+	public JPanel getPaymentPanel() {
+		return panel;
+	}
+
+	public JButton getCashButton() {
+		return cashButton;
+	}
+
+	public JButton getCashlessButton() {
+		return cashlessButton;
+	}
+
+	public void setCardLayout(CardLayout layout, JPanel panel) {
+		this.cardLayout = layout;
+		this.cardPanel = panel;
+	}
+}
