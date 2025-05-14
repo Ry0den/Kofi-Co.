@@ -320,8 +320,6 @@ public class Menu {
 		}
 	}
 
-	}
-
 	public void CardLayout() {
 
 		CoffeeTypesList();
