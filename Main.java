@@ -1,0 +1,64 @@
+package Kofi_Co;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class Main {
+
+	public static void main(String[] args) {
+		SwingUtilities.invokeLater(() -> {
+			ImageIcon KofiIcon = new ImageIcon("Kofi.png");
+			JFrame Kofi = new JFrame("Kofi Co.");
+			Kofi.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			Kofi.setSize(700, 775);
+			Kofi.setLocationRelativeTo(null);
+			Kofi.setResizable(false);
+			Kofi.setIconImage(KofiIcon.getImage());
+
+			CardLayout cardLayout = new CardLayout();
+			JPanel cardPanel = new JPanel(cardLayout);
+
+			Welcome welcome = new Welcome();
+			Menu menu = new Menu();
+			View_Order vieworder = new View_Order();
+			//Discounts discounts = new Discounts();
+			Payment_Options paymentoptions = new Payment_Options();
+			//Credit credit = new Credit();
+			//Total total = new Total();
+		//	Receipt receipt = new Receipt();
+			//End end = new End();
+
+			welcome.HomeComp();
+			menu.CardLayout();
+			vieworder.CardLayout();
+			//discounts.
+			paymentoptions.paymentcomps();
+			//credit.
+			//total.Totals();
+			//receipt.Receipts();
+			//end.EndComps();
+
+			menu.setCardLayout(cardLayout, cardPanel);
+			paymentoptions.setCardLayout(cardLayout, cardPanel);
+			vieworder.setCardLayout(cardLayout, cardPanel);
+			//total.setCardLayout(cardLayout, cardPanel);
+			//receipt.setCardLayout(cardLayout, cardPanel);
+			//end.setCardLayout(cardLayout, cardPanel);
+
+			cardPanel.add(welcome.getWelcomePanel(), "Welcome");
+			cardPanel.add(menu.getMenuPanel(), "Menu");
+			cardPanel.add(vieworder.getViewOrderPanel(), "ViewOrder");
+			cardPanel.add(paymentoptions.getPaymentPanel(), "Payment Options");
+			//cardPanel.add(total.getKofi1Panel(), "Total");
+			//cardPanel.add(receipt.getKofi1ReceiptPanel(), "Receipt");
+			//cardPanel.add(end.getEndPanel(), "End");
+
+			welcome.getHomeButton().addActionListener(e -> {
+				cardLayout.show(cardPanel, "Menu");
+			});
+
+			Kofi.add(cardPanel);
+			Kofi.setVisible(true);
+		});
+	}
+}
